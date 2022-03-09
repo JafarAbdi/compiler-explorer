@@ -404,19 +404,6 @@ function startListening(server) {
         logger.info(`  Listening on http://${defArgs.hostname || 'localhost'}:${_port}/`);
         logger.info(`  Startup duration: ${startupDurationMs}ms`);
         logger.info('=======================================');
-        const { exec } = require("child_process");
-
-        exec(`google-chrome http://${defArgs.hostname || 'localhost'}:${_port}/`, (error, stdout, stderr) => {
-            if (error) {
-                console.log(`error: ${error.message}`);
-                return;
-            }
-            if (stderr) {
-                console.log(`stderr: ${stderr}`);
-                return;
-            }
-            console.log(`stdout: ${stdout}`);
-        });
         server.listen(_port, defArgs.hostname);
     }
 }
