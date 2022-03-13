@@ -27,3 +27,6 @@ newrelic_agent.log
 
 # approval tests
 *.received.*
+
+# Personal stuff
+vcpkg-libraries
